@@ -1,4 +1,4 @@
-### Hi there 👋
+## 你想获得力量吗，你想变得更强吗！
 
 <!--
 **KexieGame3/KexieGame3** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
