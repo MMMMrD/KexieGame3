@@ -1,3 +1,7 @@
+<p align="center">
+<a href = "https://hello.kexie.space/"><img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111634004.png" width="250" /></a>
+</p>
+
 # Typora使用教程
 
 **目录**
@@ -322,6 +326,177 @@ _   下划线
 
 
 
-## 总结：
+### 总结：
 
 可能会用到的不止这些东西，想了解更多自己查去吧你，我才懒得给你复制粘贴了⛔
+
+
+
+
+
+
+
+## Typora图床
+
+### 关于图床
+
+在使用Typora上传笔记时，我们的截图在上传后无法显示只出现一个链接，或者直接把图片上传到github上面时每次打开博客图片都会加载一段时间，为了**让图片加载的时间更快，并且可以在上传的笔记当中显示自己的图片**，我们需要用到 **图床**。
+
++ 阿里云OSS图床需要付费，但是价格非常便宜，一年可能10块钱左右。
+
+
+
+### 安装
+
+#### Typora： [Typora 官方中文站 ](https://typoraio.cn/)
+
+最新版本的Typora需要付费，但是可以安装历史版本
+
+> 安装的版本需要高于**0.9.86**
+
+
+
+#### Picgo: [PicGo ](https://github.com/Molunerfinn/PicGo/releases)
+
+下滑找到这个文档安装
+
+<img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656474.png" alt="image-20220514141147756" style="zoom: 67%;" /> 
+
+
+
+#### 阿里云OSS
+
++ 进入 [阿里云](https://www.aliyun.com/product/oss)
+
++ 注册账号
+
++ 进入控制台
+
+  ![image-20220514141748130](https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656441.png )
+
++ 选择对象储存并开通
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656485.png" alt="image-20220514142301211" style="zoom: 50%;" /> 
+
++ 创建Bucket
+
+  随便创建名字
+
+  服务器选 **离自己近的**
+
+  图床选 **标准储存**
+
+  读写权限选 **公共读**
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656658.png" alt="image-20220514142426982" style="zoom: 67%;" /> 
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656656.png" alt="image-20220514142833992" style="zoom: 67%;" /> 
+
++ 找到地域节点
+
+  在刚刚创建的Bucket概览中找到 **访问域名** 
+
+  复制 **地域节点**  （只需要复制到地点）
+
+  > 如图只需要复制 `oss-cn-hangzhou`
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656569.png" style="zoom:67%;" /> 
+
++ 找到Key
+
+  鼠标放右上角头像点击Key管理
+
+  ![image-20220514144341687](https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656394.png) 
+
+  
+
+  弹出的框选继续
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656507.png" alt="image-20220514144618765" style="zoom: 67%;" /> 
+
+  
+
+  创建一个AccessKey ，在弹出的界面里，记住你的`accessKeyId`和`accessKeySecret`
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656533.png" alt="image-20220514144734301" style="zoom:67%;" /> 
+
+  
+
++ 给阿里云账户充值
+
+  可以先充值个10块钱试试
+
+  刚开始不需要购买容量包储存包之类的
+
+  >0.12元/1GB/1个月，一年就是1.44元，远低于40GB的9元收费！
+  >
+  >截图/照片以平均0.5mb/张估算，1gb可存放超过1600张图片！
+  >
+  >数据低于6GB的情况下直接充值，以GB付费其实比购买储存包更加值得！
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656396.png" alt="image-20220514145025157" style="zoom:67%;" /> 
+
+
+
+### 配置
+
+
+
+#### PicGo
+
+打开picgo后，在你windows的**状态栏**里找到picgo的图标，打开picgo的主界面
+
+<img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656746.png" style="zoom:67%;" /> 
+
+在图床设置里面选择`阿里云OSS`，依照以下步骤填写信息
+
+- **设定Keyld**：填写刚刚获得的`AccessKeyID`
+
+- **设定KeySecret**：填写`AccessKeyIDSecret`
+
+- **设定储存空间名**：填写**bucket名称**
+
+  这里填写的是`bucket名称`，不是浏览器里的域名
+
+- **确认存储区域**：填写你的`地域节点`，注意复制的格式
+
+- **指定存储路径**：其实就是自定义一个**文件夹**的名字，以`/`结尾
+
+  它会**自动**在你的bucket里面创建一个文件夹，并把图片上传进去
+
+  ·<img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656899.png" alt="image-20220514145803053" style="zoom:67%;" /> 
+
+**弄完之后，记得“确定”，并点击“设置为默认图床”！**
+
+
+
++ 在设置中打开这两项
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656578.png" alt="image-20220514145942982" style="zoom: 67%;" /> 
+
+
+
+
+
+#### Typora
+
+进入typora主界面，点击左上角的“文件-偏好设置”
+
+- 选择`图像`
+
+- 插入图片时`上传图片`
+
+- 下面的选项全勾上【更新22.03.05: 第二个`网络位置的图片`可以不勾，避免已经上传到图床的图片重复上传】
+
+- 上传服务选择`PicGo(app)`
+
+- PicGo路径：找到picgo的安装路径
+  **不是安装包的路径！！！！**
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656515.png" alt="image-20220514150042541" style="zoom:67%;" /> 
+
+  设置完毕后，我们点击验证图片上传选项
+
+  如果弹出以下弹窗，我们的图床就搞定了！
+
+  <img src="https://shadow-fy.oss-cn-chengdu.aliyuncs.com/img/202210111656486.png" alt="image-20220514150119179" style="zoom:67%;" /> 
